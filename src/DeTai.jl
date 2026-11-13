@@ -147,4 +147,46 @@ function tim_nhi_phan_de_quy(a::Vector{Int}, x::Int, l::Int=1, r::Int=length(a),
     end
 end
 
+# --------------------------------------------------------------------
+# Hàm alias “search” – trả về Bool (true nếu tìm thấy, false nếu không)
+# --------------------------------------------------------------------
+"""
+    search(arr::Vector{Int}, x::Int) -> Bool
+
+Kiểm tra xem giá trị `x` có xuất hiện trong mảng `arr` hay không
+bằng cách gọi hàm `tim_nhi_phan`.  Hàm này thực hiện cùng
+đầu vào và kiểm tra hợp lệ như các hàm khác trong module.
+
+# Example
+julia> search([5,9,12], 5)   # → true
+julia> search([5,9,12], 8)   # → false
+"""
+function search(arr::Vector{Int}, x::Int)::Bool
+    # Kiểm tra đầu vào (đúng chuẩn dự án)
+    kiem_tra_dau_vao(arr, x)
+    # `tim_nhi_phan` trả về vị trí 1‑based hoặc 0 nếu không tìm thấy
+    return tim_nhi_phan(arr, x) != 0
+end
+
+# --------------------------------------------------------------------
+# Hàm alias “search” – trả về Bool (true nếu tìm thấy, false nếu không)
+# --------------------------------------------------------------------
+"""
+    search(arr::Vector{Int}, x::Int) -> Bool
+
+Kiểm tra xem giá trị `x` có xuất hiện trong mảng `arr` hay không
+bằng cách gọi hàm `tim_nhi_phan`.  Hàm này thực hiện cùng
+đầu vào và kiểm tra hợp lệ như các hàm khác trong module.
+
+# Example
+julia> search([5,9,12], 5)   # → true
+julia> search([5,9,12], 8)   # → false
+"""
+function search(arr::Vector{Int}, x::Int)::Bool
+    # Kiểm tra đầu vào (đúng chuẩn dự án)
+    kiem_tra_dau_vao(arr, x)
+    # `tim_nhi_phan` trả về vị trí 1‑based hoặc 0 nếu không tìm thấy
+    return tim_nhi_phan(arr, x) != 0
+end
+
 end # module DeTai
